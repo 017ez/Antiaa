@@ -1,0 +1,194 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "017", HidePremium = true, SaveConfig = false, ConfigFolder = "OrionTest"})
+OrionLib:MakeNotification({
+	Name = "Maded By 017",
+	Content = "!?",
+	Image = "rbxassetid://4483345998",
+	Time = 13
+})
+
+---Tabs
+local RageTab = Window:MakeTab({
+	Name = "Rage",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local SemiRageTab = Window:MakeTab({
+	Name = "SemiRage",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local SkyTab = Window:MakeTab({
+	Name = "Sky",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+-----------------------------------------------------------------------------------------------------------------------------
+RageTab:AddButton({
+	Name = "Open the RAGE",
+	Callback = function()
+getgenv().BlatantAA = true
+
+local Position = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+while getgenv().BlatantAA == true  do
+    task.wait()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = (CFrame.new(Position) + Vector3.new(math.random(-15, 15), math.random(-15, 15), math.random(-15, 15))) * CFrame.Angles(math.rad(math.random(-180, 180)), math.rad(math.random(-180, 180)), math.rad(math.random(-180, 180)))
+end
+  	end    
+})
+
+RageTab:AddButton({
+	Name = "Close The RAGE",
+	Callback = function()
+getgenv().BlatantAA = false
+
+local Position = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+while getgenv().BlatantAA == true  do
+    task.wait()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = (CFrame.new(Position) + Vector3.new(math.random(-15, 15), math.random(-15, 15), math.random(-15, 15))) * CFrame.Angles(math.rad(math.random(-180, 180)), math.rad(math.random(-180, 180)), math.rad(math.random(-180, 180)))
+end
+  	end    
+})
+
+SemiRageTab:AddButton({
+	Name = "Open The Semi Rage",
+	Callback = function()
+getgenv().SemiRageAA = true
+--
+getgenv().BlatantAA = false
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+local Position = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+while getgenv().BlatantAA == true  do
+    task.wait()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = (CFrame.new(Position) + Vector3.new(math.random(-15, 15), math.random(-15, 15), math.random(-15, 15))) * CFrame.Angles(math.rad(math.random(-180, 180)), math.rad(math.random(-180, 180)), math.rad(math.random(-180, 180)))
+end
+while getgenv().SemiRageAA == true  do
+    task.wait()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = (CFrame.new(Position) + Vector3.new(math.random(-5, 1), math.random(-5, 1), math.random(-5, 1))) * CFrame.Angles(math.rad(math.random(-5, 1)), math.rad(math.random(-5, 1)), math.rad(math.random(-5, 1)))
+end
+  	end    
+})
+
+SemiRageTab:AddButton({
+	Name = "Close The Semi Rage",
+	Callback = function()
+getgenv().SemiRageAA = false
+--
+getgenv().BlatantAA = false
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+local Position = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+while getgenv().BlatantAA == true  do
+    task.wait()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = (CFrame.new(Position) + Vector3.new(math.random(-15, 15), math.random(-15, 15), math.random(-15, 15))) * CFrame.Angles(math.rad(math.random(-180, 180)), math.rad(math.random(-180, 180)), math.rad(math.random(-180, 180)))
+end
+while getgenv().SemiRageAA == true  do
+    task.wait()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = (CFrame.new(Position) + Vector3.new(math.random(-5, 1), math.random(-5, 1), math.random(-5, 1))) * CFrame.Angles(math.rad(math.random(-5, 1)), math.rad(math.random(-5, 1)), math.rad(math.random(-5, 1)))
+end
+  	end    
+})
+
+SkyTab:AddButton({
+	Name = "Open The Sky",
+	Callback = function()
+getgenv().Sky = true 
+getgenv().SkyAmount = 500
+
+game:GetService("RunService").heartbeat:Connect(function()
+    if getgenv().Sky ~= false then 
+    local vel = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
+    game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0,      getgenv().SkyAmount,0) 
+    game:GetService("RunService").RenderStepped:Wait()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = vel
+    end 
+end)
+  	end    
+})
+
+SkyTab:AddButton({
+	Name = "Close The Sky",
+	Callback = function()
+getgenv().Sky = false
+getgenv().SkyAmount = 500
+
+game:GetService("RunService").heartbeat:Connect(function()
+    if getgenv().Sky ~= false then 
+    local vel = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
+    game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0,      getgenv().SkyAmount,0) 
+    game:GetService("RunService").RenderStepped:Wait()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = vel
+    end 
+end)
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
