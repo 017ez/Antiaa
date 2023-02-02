@@ -25,7 +25,51 @@ local SkyTab = Window:MakeTab({
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
+
+local VelocityTab = Window:MakeTab({
+	Name = "Velocity",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local MiscTab = Window:MakeTab({
+	Name = "Misc",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
 -----------------------------------------------------------------------------------------------------------------------------
+MiscTab:AddButton({
+	Name = "No Delay 1",
+	Callback = function()
+local nobulletdelay = game:GetService("CorePackages").Packages
+nobulletdelay:Destroy()
+  	end    
+})
+
+MiscTab:AddButton({
+	Name = "No Delay 2",
+	Callback = function()
+local ReplicatedStorage = game.ReplicatedStorage
+local Network = game.Network
+local Delay = ReplicatedStorage.BulletHole.Delay
+
+Delay.Position:Destroy()
+Delay.Position = 0
+  	end    
+})
+
+MiscTab:AddButton({
+	Name = "No Recoil",
+	Callback = function()
+local CurrentFocus = game:GetService("Workspace").CurrentCamera.CFrame
+    game:GetService("Workspace").CurrentCamera:Destroy()
+    local Instance = Instance.new("Camera", game:GetService("Workspace"))
+    Instance.CameraSubject = game:GetService("Players").LocalPlayer.Character.Humanoid
+    Instance.CameraType = Enum.CameraType.Custom
+    Instance.CFrame = CurrentFocus
+  	end    
+})
+
 RageTab:AddButton({
 	Name = "Open the RAGE",
 	Callback = function()
@@ -188,7 +232,35 @@ end)
   	end    
 })
 
---[[
-Name = <string> - The name of the button.
-Callback = <function> - The function of the button.
-]]
+VelocityTab:AddButton({
+	Name = "Open The Velocity",
+	Callback = function()
+getgenv().demisethebest = true 
+
+game:GetService("RunService").heartbeat:Connect(function()
+    if getgenv().demisethebest == true then 
+    local abc = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
+    game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(1,1,1) * (2^16)
+    game:GetService("RunService").RenderStepped:Wait()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = abc
+    end 
+end)
+
+  	end    
+})
+
+VelocityTab:AddButton({
+	Name = "Close The Velocity",
+	Callback = function()
+getgenv().demisethebest = false 
+
+game:GetService("RunService").heartbeat:Connect(function()
+    if getgenv().demisethebest == true then 
+    local abc = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
+    game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(1,1,1) * (2^16)
+    game:GetService("RunService").RenderStepped:Wait()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = abc
+    end 
+end)
+  	end    
+})
